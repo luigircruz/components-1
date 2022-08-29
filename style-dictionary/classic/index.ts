@@ -34,7 +34,7 @@ export function buildClassicOpenSource(builder: ThemeBuilder) {
   return builder.build();
 }
 
-const builder = new ThemeBuilder('classic', ':root', modes);
+const builder = new ThemeBuilder('classic', ':root, awsui-light-mode', modes);
 const theme = buildClassicOpenSource(builder);
 
 export default theme;
