@@ -49,7 +49,7 @@ export function buildVisualRefresh(builder: ThemeBuilder) {
   return builder.build();
 }
 
-const builder = new ThemeBuilder('visual-refresh', ':root', modes);
+const builder = new ThemeBuilder('visual-refresh', ':root, .awsui-light-mode', modes);
 const theme = buildVisualRefresh(builder);
 
 export default theme;

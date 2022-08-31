@@ -10,7 +10,7 @@ const modes = [
   createMotionMode('.awsui-motion-disabled'),
 ];
 
-const builder = new ThemeBuilder('visual-refresh', '.awsui-visual-refresh', modes);
+const builder = new ThemeBuilder('visual-refresh', '.awsui-visual-refresh, .awsui-light-mode', modes);
 const theme = buildVisualRefresh(builder);
 
 export default theme;
