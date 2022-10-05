@@ -1,0 +1,21 @@
+# This workflow releases notes to github
+name: Release Github notes
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        description: 'Specify the version for this release'
+        type: string
+      npm_package:
+        required: true
+        description: 'npm package of the release repo'
+        type: string
+jobs:
+  release:
+    uses: abdhalees/cloudscape-workflows/.github/workflows/release-gh-notes.yml@dev-v3-alhalee
+    secrets: inherit
+    with:
+      npm_package: ${{ github.event.inputs.npm_package }}
+      version: ${{ github.event.inputs.version }}
