@@ -20,6 +20,7 @@ interface TableHeaderCellProps {
   wrapLines: boolean | undefined;
   resizer: React.ReactNode;
   showFocusRing: boolean;
+  hidden?: boolean;
   onClick(detail: TableProps.SortingState<any>): void;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -36,6 +37,7 @@ export function TableHeaderCell({
   wrapLines,
   resizer,
   showFocusRing,
+  hidden,
   onClick,
   onFocus,
   onBlur,
@@ -70,6 +72,7 @@ export function TableHeaderCell({
         [styles['header-cell-disabled']]: sortingDisabled,
         [styles['header-cell-ascending']]: sortingStatus === 'ascending',
         [styles['header-cell-descending']]: sortingStatus === 'descending',
+        [styles['header-cell-hidden']]: hidden,
       })}
       aria-sort={sortingStatus && getAriaSort(sortingStatus)}
       style={style}
